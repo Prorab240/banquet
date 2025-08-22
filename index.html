@@ -9,8 +9,8 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: var(--secondary-color);
-      color: var(--primary-color);
+      background-color: #f5f5f5;
+      color: #333;
       text-align: center;
     }
     header {
@@ -61,198 +61,172 @@
     .prev { left: 10px; }
     .next { right: 10px; }
     form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
-    input, textarea, button { padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; }
-    button {
-      background: #b22222;
-      color: white;
-      cursor: pointer;
-      border: none;
-      transition: 0.3s;
+    input, textarea, button { 
+      padding: 10px; 
+      font-size: 1em; 
+      border-radius: 5px; 
+      border: 1px solid #ccc; 
     }
-    button:hover { background: #8b0000; }
-    footer { background: #333; color: #fff; padding: 20px; }
+    button { 
+      background: #b22222; 
+      color: white; 
+      cursor: pointer; 
+      border: none; 
+      transition: background 0.3s;
+    }
+    button:hover { background: #8b1a1a; }
+    
+    /* Стили для счетчика */
+    .countdown-container {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    #countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      min-width: 80px;
+    }
+    .countdown-number {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #b22222;
+    }
+    .countdown-label {
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
     @media (max-width: 600px) {
-      header h1 { font-size: 2em; }
-      header p { font-size: 1.2em; }
-      .slider { max-width: 100%; }
+      .countdown-item {
+        min-width: 60px;
+      }
+      .countdown-number {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Приглашение на банкет</h1>
-    <p>5 октября 2025 • 18:30</p>
+    <p>В честь дня рождения Дмитрия</p>
+    <p>5 октября 2025 г. | Ресторан "Элеганс", Москва</p>
+    
+    <div class="countdown-container">
+      <h2>До мероприятия осталось:</h2>
+      <div id="countdown">
+        <!-- Таймер будет вставлен сюда -->
+      </div>
+    </div>
   </header>
 
   <section>
-    <h2>Дорогие друзья!</h2>
-    <p>Мы рады пригласить вас на торжественный банкет в честь Дня рождения Дмитрия. Вас ждёт изысканная кухня, праздничная атмосфера и море приятных эмоций!</p>
-  </section>
-
-  <section>
-    <h2>Место проведения</h2>
-    <p>Ресторан «Элеганс», г. Москва, ул. Арбат, 12</p>
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.258493222333!2d37.594515615930836!3d55.75222098055242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a961f1df7%3A0x6d6f83d5ebc6b7d6!2z0JDRgNC40LzQsNC90YvQuSDQk9GA0YPQt9C-0LLQviwgMTIsINCc0L7RgdC60LLQsCwgMTA5MDEx!5e0!3m2!1sru!2sru!4v1692275761234!5m2!1sru!2sru" allowfullscreen=""></iframe>
-    </div>
-  </section>
-
-  <section>
-    <h2>Программа вечера</h2>
+    <h2>Программа мероприятия</h2>
     <ul class="program">
-      <li>18:30 – Встреча гостей, welcome drink</li>
-      <li>19:00 – Торжественное открытие вечера</li>
-      <li>19:30 – Праздничный банкет</li>
-      <li>20:30 – Конкурсы и развлечения</li>
-      <li>22:00 – Танцы и шоу-программа</li>
-      <li>00:00 – Финал вечера, сюрприз</li>
+      <li>18:00 - Встреча гостей, фуршет</li>
+      <li>19:00 - Торжественное поздравление</li>
+      <li>20:00 - Ужин</li>
+      <li>21:00 - Танцы и развлечения</li>
     </ul>
   </section>
 
+  <section class="map">
+    <h2>Место проведения</h2>
+    <iframe src="https://yandex.ru/map-widget/v1/-/CCURUQX8XA" allowfullscreen="true"></iframe>
+  </section>
+
   <section>
-    <h2>Фотогалерея</h2>
+    <h2>Фотографии с прошлых мероприятий</h2>
     <div class="slider">
       <div class="slides">
-        <img src="https://via.placeholder.com/600x400?text=Фото+1" alt="Фото 1">
-        <img src="https://via.placeholder.com/600x400?text=Фото+2" alt="Фото 2">
-        <img src="https://via.placeholder.com/600x400?text=Фото+3" alt="Фото 3">
+        <img src="https://images.unsplash.com/photo-1555244162-803834f70033" alt="Банкет">
+        <img src="https://images.unsplash.com/photo-1519683109079-d5f539e1542f" alt="Празднование">
+        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622" alt="Торт">
       </div>
-      <button class="prev" onclick="moveSlide(-1)">❮</button>
-<button class="next" onclick="moveSlide(1)">❯</button>
+      <button class="prev">❮</button>
+      <button class="next">❯</button>
     </div>
   </section>
 
-  <header>
-    <div id="countdown">
-  <h2>До мероприятия осталось:</h2>
-  <div class="countdown-container">
-    <div class="countdown-item">
-      <span id="days">00</span>
-      <div class="countdown-label">дней</div>
-    </div>
-    <div class="countdown-item">
-      <span id="hours">00</span>
-      <div class="countdown-label">часов</div>
-    </div>
-    <div class="countdown-item">
-      <span id="minutes">00</span>
-      <div class="countdown-label">минут</div>
-    </div>
-    <div class="countdown-item">
-      <span id="seconds">00</span>
-      <div class="countdown-label">секунд</div>
-    </div>
-  </div>
-</div>
-    <style>
-      #countdown {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 600px;
-  margin: 20px auto;
-  color: white;
-}
-
-.countdown-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.countdown-item {
-  text-align: center;
-  min-width: 70px;
-}
-
-.countdown-item span {
-  display: block;
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.countdown-label {
-  font-size: 0.9em;
-  opacity: 0.8;
-}
-
-@media (max-width: 600px) {
-  .countdown-item span {
-    font-size: 1.8em;
-  }
-}    </style>
-    <!-- Скрипт обратного отсчета -->
-<script>
-  // Дата банкета (5 октября 2025 года)
-  const eventDate = new Date('October 5, 2025 18:00:00').getTime();
-  
-  // Обновление таймера каждую секунду
-  const countdownTimer = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-    
-    // Расчет дней, часов, минут и секунд
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    // Вывод результата в элемент с id="countdown"
-    document.getElementById("countdown").innerHTML = `
-      <div class="countdown-item">
-        <span class="countdown-number">${days}</span>
-        <span class="countdown-label">дней</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-number">${hours}</span>
-        <span class="countdown-label">часов</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-number">${minutes}</span>
-        <span class="countdown-label">минут</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-number">${seconds}</span>
-        <span class="countdown-label">секунд</span>
-      </div>
-    `;
-    
-    // Если время истекло
-    if (distance < 0) {
-      clearInterval(countdownTimer);
-      document.getElementById("countdown").innerHTML = "Банкет начался!";
-    }
-  }, 1000);
-</script>
-  </header>
   <section>
     <h2>Подтвердите участие</h2>
-    <form action="https://formspree.io/f/myformid" method="POST">
-      <input type="text" name="name" placeholder="Ваше имя" required>
-      <textarea name="comment" placeholder="Комментарий (например, особые пожелания)" rows="3"></textarea>
-      <button type="submit">Я приду!</button>
+    <form id="rsvp-form">
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="email" placeholder="Ваш email" required>
+      <textarea placeholder="Ваши пожелания (необязательно)"></textarea>
+      <button type="submit">Подтвердить участие</button>
     </form>
   </section>
 
-  <footer>
-    <p>По всем вопросам звоните: +7 (999) 123-45-67</p>
-  </footer>
-
+  <!-- JavaScript для обратного счетчика и слайдера -->
   <script>
-    let index = 0;
+    // Обратный отсчет до банкета
+    const countdown = () => {
+      const eventDate = new Date('October 5, 2025 18:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      document.getElementById("countdown").innerHTML = `
+        <div class="countdown-item">
+          <span class="countdown-number">${days}</span>
+          <span class="countdown-label">дней</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number">${hours}</span>
+          <span class="countdown-label">часов</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number">${minutes}</span>
+          <span class="countdown-label">минут</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number">${seconds}</span>
+          <span class="countdown-label">секунд</span>
+        </div>
+      `;
+      
+      if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById("countdown").innerHTML = '<div style="font-size: 1.5em; color: #b22222;">Банкет начался!</div>';
+      }
+    };
+    
+    const countdownTimer = setInterval(countdown, 1000);
+    countdown(); // Инициализация сразу
+    
+    // Слайдер изображений
+    let currentSlide = 0;
     const slides = document.querySelector('.slides');
-    const total = slides.children.length;
-
-    function moveSlide(step) {
-      index = (index + step + total) % total;
-      slides.style.transform = translateX(${-index * 100}%);
+    const slidesCount = slides.querySelectorAll('img').length;
+    
+    function showSlide(n) {
+      currentSlide = (n + slidesCount) % slidesCount;
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
-
-    // Автопрокрутка каждые 5 секунд
-    setInterval(() => moveSlide(1), 5000);
+    
+    document.querySelector('.prev').addEventListener('click', () => showSlide(currentSlide - 1));
+    document.querySelector('.next').addEventListener('click', () => showSlide(currentSlide + 1));
+    
+    // Форма RSVP
+    document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Спасибо! Ваше участие подтверждено.');
+      this.reset();
+    });
   </script>
 </body>
 </html>
