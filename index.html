@@ -184,6 +184,49 @@
     font-size: 1.8em;
   }
 }    </style>
+    <!-- Скрипт обратного отсчета -->
+<script>
+  // Дата банкета (5 октября 2025 года)
+  const eventDate = new Date('October 5, 2025 18:00:00').getTime();
+  
+  // Обновление таймера каждую секунду
+  const countdownTimer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+    
+    // Расчет дней, часов, минут и секунд
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Вывод результата в элемент с id="countdown"
+    document.getElementById("countdown").innerHTML = `
+      <div class="countdown-item">
+        <span class="countdown-number">${days}</span>
+        <span class="countdown-label">дней</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number">${hours}</span>
+        <span class="countdown-label">часов</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number">${minutes}</span>
+        <span class="countdown-label">минут</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number">${seconds}</span>
+        <span class="countdown-label">секунд</span>
+      </div>
+    `;
+    
+    // Если время истекло
+    if (distance < 0) {
+      clearInterval(countdownTimer);
+      document.getElementById("countdown").innerHTML = "Банкет начался!";
+    }
+  }, 1000);
+</script>
   </header>
   <section>
     <h2>Подтвердите участие</h2>
