@@ -123,6 +123,68 @@
     </div>
   </section>
 
+  <header>
+    <div id="countdown">
+  <h2>До мероприятия осталось:</h2>
+  <div class="countdown-container">
+    <div class="countdown-item">
+      <span id="days">00</span>
+      <div class="countdown-label">дней</div>
+    </div>
+    <div class="countdown-item">
+      <span id="hours">00</span>
+      <div class="countdown-label">часов</div>
+    </div>
+    <div class="countdown-item">
+      <span id="minutes">00</span>
+      <div class="countdown-label">минут</div>
+    </div>
+    <div class="countdown-item">
+      <span id="seconds">00</span>
+      <div class="countdown-label">секунд</div>
+    </div>
+  </div>
+</div>
+    <style>
+      #countdown {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+  color: white;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.countdown-item {
+  text-align: center;
+  min-width: 70px;
+}
+
+.countdown-item span {
+  display: block;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.countdown-label {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .countdown-item span {
+    font-size: 1.8em;
+  }
+}    </style>
+  </header>
   <section>
     <h2>Подтвердите участие</h2>
     <form action="https://formspree.io/f/myformid" method="POST">
@@ -149,6 +211,5 @@
     // Автопрокрутка каждые 5 секунд
     setInterval(() => moveSlide(1), 5000);
   </script>
-
 </body>
 </html>
